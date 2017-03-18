@@ -1,8 +1,15 @@
+// Starting Point
+require('dotenv').config()
 var express = require('express');
 var http = require('http');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var app = express();
+
+// Database Setup
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.DB);
 
 // App Setup
 app.use(morgan('combined'));
