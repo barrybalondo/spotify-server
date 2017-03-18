@@ -6,6 +6,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var app = express();
+var peopleController = require('./controllers/peopleController');
 
 // Database Setup
 mongoose.Promise = global.Promise;
@@ -16,10 +17,9 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: true }));
 
-// Test
-app.get('/',function(req, res) {
-  res.json({ message: 'Welcome back Barry!' });   
-});
+// Controller/Route Setup
+var router = express.Router();
+peopleController(router, app);
 
 // Server Setup
 var port = process.env.PORT || 3000;
