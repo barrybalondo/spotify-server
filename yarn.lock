@@ -27,6 +27,10 @@ bluebird@2.10.2:
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.10.2.tgz#024a5517295308857f14f91f1106fc3b555f446b"
 
+bluebird@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
+
 body-parser@^1.17.1:
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.17.1.tgz#75b3bc98ddd6e7e0d8ffe750dfaca5c66993fa47"
@@ -151,6 +155,10 @@ express@^4.15.2:
     utils-merge "1.0.0"
     vary "~1.1.0"
 
+extend@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.0.tgz#5a474353b9f3353ddd8176dfd37b91c83a46f1d4"
+
 finalhandler@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.0.0.tgz#b5691c2c0912092f18ac23e9416bde5cd7dc6755"
@@ -248,6 +256,12 @@ mongodb@2.2.24:
     es6-promise "3.2.1"
     mongodb-core "2.1.8"
     readable-stream "2.1.5"
+
+mongoose-auto-increment@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/mongoose-auto-increment/-/mongoose-auto-increment-5.0.1.tgz#827e051d9cc371dabe8bff1a704431d341cb79df"
+  dependencies:
+    extend "^3.0.0"
 
 mongoose@^4.9.0:
   version "4.9.0"
