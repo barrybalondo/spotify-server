@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
-var autoIncrement = require('mongoose-auto-increment');
 
+// Forced _id to auto-increment by 1 to mimic the example
+// given in the requirements.
+var autoIncrement = require('mongoose-auto-increment');
 mongoose.Promise = require('bluebird');
 var connection = mongoose.createConnection(process.env.DB);
 autoIncrement.initialize(connection);

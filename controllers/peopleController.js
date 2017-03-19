@@ -3,7 +3,7 @@ var Peoples = require('../models/people');
 module.exports = function(router, app) {
 
   router.route('/people')
-    // Get function, get all people list
+    // Get route -> get all people list
     .get(function(req, res) {
       Peoples.find({}).
       sort({ createdAt: -1 }).
@@ -13,7 +13,7 @@ module.exports = function(router, app) {
         res.json(peoples);
       });     
     })
-    // Post function, create people
+    // Post route -> create new people object
     .post(function(req, res){
       var newPeople = Peoples({
         name: req.body.name,
@@ -22,10 +22,10 @@ module.exports = function(router, app) {
       newPeople.save(function(err){
         if(err)
           throw err;
-        res.send('Success');    
+        res.json({ message: 'Successfully Added!' });    
       });
     })
-    // Get specifc info for people by :id
+    // Get :id route -> Get specifc people object by :id
     router.route('/people/:people_id')
       .get(function(req, res) {
           Peoples.findById(req.params.people_id, function(err, people) {
@@ -34,23 +34,23 @@ module.exports = function(router, app) {
               res.json(people);
           });
       })
+      // Update route -> find by people object by :id and update
       .put(function(req, res) {
-        // find by people by :id and update
         Peoples.findById(req.params.people_id, function(err, people) {
             if (err)
                 res.send(err);
-            people.name = req.body.name;  // update the info
+            // info updated here
+            people.name = req.body.name; 
             people.favoriteCity = req.body.favoriteCity;
             // save
             people.save(function(err) {
                 if (err)
                     res.send(err);
-                res.json({ message: 'People updated!' });
+                res.json({ message: 'Successfully Updated!' });
             });
-
         });
       })
-      // Delete specific people by :id
+      // Delete route -> delete specific people object by :id
       .delete(function(req, res) {
         Peoples.remove({
             _id: req.params.people_id
@@ -58,7 +58,7 @@ module.exports = function(router, app) {
             if (err)
                 res.send(err);
 
-            res.json({ message: 'Successfully deleted' });
+            res.json({ message: 'Successfully Deleted!' });
         });
     });
 

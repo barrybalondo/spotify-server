@@ -9,7 +9,6 @@ var app = express();
 var peopleController = require('./controllers/peopleController');
 
 // Database Setup
-mongoose.Promise = require('bluebird');
 mongoose.connect(process.env.DB);
 
 // App Setup
