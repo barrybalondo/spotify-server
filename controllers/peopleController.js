@@ -57,7 +57,6 @@ module.exports = function(router, app) {
         }, function(err, people) {
             if (err)
                 res.send(err);
-
             res.json({ message: 'Successfully Deleted!' });
         });
     });
